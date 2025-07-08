@@ -1,6 +1,6 @@
 # Desafio Técnico Frontend - Instrutor(a) Vai Na Web 
 
-Bem-vindo(a) ao desafio técnico para a vaga de **Instrutor(a) de Desenvolvimento Front-End**!
+Bem-vindo(a) ao desafio técnico para a vaga de **Instrutor(a) Front-End**!
 
 Este repositório contém as instruções para o desenvolvimento de uma **página de filmes (StreamFlix)**. O objetivo é avaliar seus conhecimentos em React.js, SCSS, consumo de APIs, organização de projeto, semântica e acessibilidade.
 
