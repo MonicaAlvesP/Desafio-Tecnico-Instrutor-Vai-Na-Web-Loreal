@@ -21,8 +21,8 @@ Você deve:
 6. Estruturar o projeto com **componentização** e organização clara de pastas.
 7. Utilizar **commits semânticos** (padrão [Conventional Commits](https://www.conventionalcommits.org/)).
 8. Criar um **README** claro e informativo.
-9. Consumir uma **API de filmes com Axios**:  
-   👉 [https://sampleapis.com/api-list/movies](https://sampleapis.com/api-list/movies) *(escolha o gênero que preferir)*
+9. Consumir uma **API de filmes do Studio Ghibli com Axios**:  
+   👉 [https://ghibliapi.vercel.app/films](https://ghibliapi.vercel.app/films) 
 
 ---
 
@@ -37,7 +37,7 @@ Você deve utilizar:
 
 ---
 
-### 📝 [Link da API](https://sampleapis.com/api-list/movies)
+### 📝 [Link da API](https://ghibliapi.vercel.app/films)
 ### 🎨 [Link do Figma](https://www.figma.com/design/XnIM49uMPmsXrSThQ8ShfB/StreamFlix?node-id=0-1&p=f)
 
 ---
