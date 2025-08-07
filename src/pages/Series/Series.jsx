@@ -1,8 +1,8 @@
 export default function Series() {
   return (
-    <div>
+    <main>
       <h1>Séries</h1>
       <p>Aqui você encontrará todas as séries disponíveis!</p>
-    </div>
+    </main>
   );
 }

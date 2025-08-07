@@ -1,0 +1,125 @@
+.sidebar {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    display: block;
+    z-index: 1000;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #000000;
+    border-right: 1px solid #333;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .userSection {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    display: block;
+  }
+
+  .userMenu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #1a1a1a;
+    }
+  }
+
+  .userPhoto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .userName {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  .arrow {
+    margin-left: auto;
+    color: #ffffff;
+  }
+
+  .navigation {
+    flex: 1;
+    padding: 20px 0;
+    display: block;
+  }
+
+  .navList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  .navItem {
+    display: flex !important;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 0 25px 25px 0;
+    margin-right: 10px;
+    margin-bottom: 5px;
+
+    &:hover {
+      background-color: #1a1a1a;
+      color: #d32020 !important;
+    }
+  }
+
+  .icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    color: inherit;
+  }
+
+  .text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: inherit;
+  }
+}

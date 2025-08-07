@@ -56,7 +56,7 @@ export default function PesquisarFilmesESeries() {
   return (
     <main className={s.container}>
       <header>
-        <form className={s.searchBar} role="search" onSubmit={e => e.preventDefault()}>
+        <form role="search" onSubmit={e => e.preventDefault()}>
           <div className={s.inputContainer}>
             <BsSearch className={s.searchIcon} />
             <input

@@ -1,28 +1,42 @@
+import { useEffect } from "react";
 import { useFilmsContext } from "../../context/FilmsContext";
-import s from "../Inicio/inicio.module.scss";
+import s from "./minhaLista.module.scss";
 
 export default function MinhaLista() {
-  const { films, myList } = useFilmsContext();
-  const filmesNaLista = films.filter(film => myList.includes(film.id));
+  const { films, myList, fetchFilms, loading, error } = useFilmsContext();
+
+  // Carregar filmes quando o componente montar se não estiverem carregados
+  useEffect(() => {
+    if (films.length === 0) {
+      fetchFilms();
+    }
+  }, [films.length, fetchFilms]);
+
+  // Filtra apenas os filmes que estão na lista de favoritos
+  const favoritosFiltrados = films.filter(film => myList.includes(film.id));
 
   return (
-    <main>
-      <header>
-        <h1>Minha Lista</h1>
-      </header>
-      {filmesNaLista.length === 0 ? (
-        <p>Sua lista está vazia.</p>
-      ) : (
-        <section className={s.filmsGrid}>
-          {filmesNaLista.map(film => (
-            <article key={film.id} className={s.filmCard}>
-              <img src={film.image} alt={film.title} className={s.filmImage} />
-              <h4 className={s.filmTitle}>{film.title}</h4>
-              <p className={s.filmProducer}>{film.producer}</p>
-            </article>
-          ))}
-        </section>
+    <div className={s.container}>
+      <h3 className={s.title}>Minha Lista</h3>
+
+      {loading && <p className={s.loading}>Carregando filmes...</p>}
+      {error && <p className={s.error}>Erro ao carregar filmes.</p>}
+
+      {!loading && !error && favoritosFiltrados.length === 0 && (
+        <p className={s.empty}>Sua lista de favoritos está vazia.</p>
       )}
-    </main>
+
+      {!loading && !error && favoritosFiltrados.length > 0 && (
+        <div className={s.grid}>
+          {favoritosFiltrados.map(film => (
+            <div key={film.id} className={s.card}>
+              <img src={film.image} alt={film.title} className={s.poster} />
+              <h3 className={s.filmTitle}>{film.title}</h3>
+              <p className={s.filmInfo}>{film.release_date}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }

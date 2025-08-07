@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect, useMemo } from "react";
 import { getFilms } from "../services/api";
 
 export const FilmsContext = createContext();
@@ -8,8 +8,17 @@ export function AppProvider({ children }) {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [watchedFilms, setWatchedFilms] = useState([]); // array de ids
-  const [myList, setMyList] = useState([]); // array de ids
+
+  // Carregue a lista de favoritos do localStorage ao inicializar
+  const [myList, setMyList] = useState(() => {
+    const savedList = localStorage.getItem("myList");
+    return savedList ? JSON.parse(savedList) : [];
+  });
+
+  // Salve a lista de favoritos no localStorage sempre que mudar
+  useEffect(() => {
+    localStorage.setItem("myList", JSON.stringify(myList));
+  }, [myList]);
 
   // Função para buscar filmes da API
   const fetchFilms = async () => {
@@ -25,13 +34,6 @@ export function AppProvider({ children }) {
     }
   };
 
-  // Marcar/desmarcar como assistido
-  const toggleWatched = (id) => {
-    setWatchedFilms((prev) =>
-      prev.includes(id) ? prev.filter(filmId => filmId !== id) : [...prev, id]
-    );
-  };
-
   // Adicionar/remover da lista
   const toggleMyList = (id) => {
     setMyList((prev) =>
@@ -39,17 +41,17 @@ export function AppProvider({ children }) {
     );
   };
 
+  const value = useMemo(() => ({
+    films,
+    loading,
+    error,
+    fetchFilms,
+    myList,
+    toggleMyList
+  }), [films, loading, error, myList]);
+
   return (
-    <FilmsContext.Provider value={{
-      films,
-      loading,
-      error,
-      fetchFilms,
-      watchedFilms,
-      myList,
-      toggleWatched,
-      toggleMyList
-    }}>
+    <FilmsContext.Provider value={value}>
       {children}
     </FilmsContext.Provider>
   );

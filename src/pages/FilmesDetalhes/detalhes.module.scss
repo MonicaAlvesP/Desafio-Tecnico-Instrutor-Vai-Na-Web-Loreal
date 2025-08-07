@@ -6,6 +6,15 @@
   padding: 2rem;
 }
 
+.imageSection {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #1e1e1e;
+}
+
 .moviePoster {
   height: 60vh;
 }
@@ -16,7 +25,7 @@
   justify-content: space-between;
   align-items: flex-start;
   color: #fff;
-  width: 75%;
+  width: 70%;
 
   h1 {
     font-size: 2rem;

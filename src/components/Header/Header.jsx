@@ -10,7 +10,7 @@ import { MdHomeFilled, MdSettings } from 'react-icons/md';
 import { PiFilmReelFill } from 'react-icons/pi';
 import { RiTvFill } from 'react-icons/ri';
 import { IoStarSharp } from 'react-icons/io5';
-import Sidebar from '../RespondiveSidebar/Sidebar';
+import Sidebar from '../ResponsiveSidebar/Sidebar';
 
 export default function Header() {
   // Estado para controlar se o menu está aberto ou fechado iniciando como fechado

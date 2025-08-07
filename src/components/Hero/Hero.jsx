@@ -1,15 +1,9 @@
-
 import { useFilmsContext } from "../../context/FilmsContext";
 import s from "./Hero.module.scss";
 
 export default function Hero({ title, autor, ano, rate, description, image, id }) {
-  const { watchedFilms, myList, toggleWatched, toggleMyList } = useFilmsContext();
-  const watched = watchedFilms.includes(id);
+  const { myList, toggleMyList } = useFilmsContext();
   const addedToList = myList.includes(id);
-
-  const handleWatchNow = () => {
-    toggleWatched(id);
-  };
 
   const handleAddToList = () => {
     toggleMyList(id);
@@ -29,8 +23,8 @@ export default function Hero({ title, autor, ano, rate, description, image, id }
         </div>
         <p className={s.description}>{description}</p>
         <div className={s.actions}>
-          <button onClick={handleWatchNow}>
-            ▶ {watched ? "Continuar assistindo" : "Assistir agora"}
+          <button>
+            ▶ Assistir agora
           </button>
           <button onClick={handleAddToList}>
             ★ {addedToList ? "Remover da lista" : "Adicionar à lista"}
