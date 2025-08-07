@@ -1,12 +1,13 @@
-![StreamFlix Logo](src/assets/Logo.png)
+![StreamFlix Logo](./src/assets/Logo.png)
 
 # Plataforma de Streaming de Filmes do Studio Ghibli
 
 StreamFlix é uma plataforma de streaming que oferece uma interface intuitiva para explorar o catálogo de filmes do [Studio Ghibli](https://studioghibli.com.br/?srsltid=AfmBOop3F9tmLv74W8YnVl3O5tjbVqUfXKPLoPTQj4ChAeAjMbCSJcnk). O projeto foi desenvolvido como parte do desafio técnico para a posição de instrutor no programa Vai Na Web da L'Oréal.
 
-![Screenshot da Interface](src/assets/screenshot.png)
+![Screenshot da Interface](./src//assets/screenshot.png)
 
 ## Guia de Navegação
+Este guia tem como objetivo ajudar os usuários a navegar pela plataforma e utilizar suas funcionalidades de forma eficiente.
 
 ### Navegação Principal
 
