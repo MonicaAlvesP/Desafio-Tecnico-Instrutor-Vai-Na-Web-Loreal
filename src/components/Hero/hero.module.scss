@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .hero {
   display: flex;
   align-items: center;
@@ -46,7 +48,7 @@
   transition: background-color 0.2s;
 
   &:hover {
-    background: darken(#35d7da, 5%);
+    background: color.scale(#35d7da, $lightness: -5%);
   }
 }
 
@@ -57,7 +59,7 @@
   transition: background-color 0.2s;
 
   &:hover {
-    background: darken(#e74c3c, 5%);
+    background: color.scale(#e74c3c, $lightness: -5%);
   }
 }
 
