@@ -42,12 +42,55 @@
   margin-top: 2px;
 }
 
+.imageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.detailsButton {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: #35d7da;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0004;
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.detailsButton:hover {
+  background: #1bb3b7;
+}
+
+.progressBarWrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8px;
+  background: #2228;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #35d7da, #e74c3c);
+  transition: width 0.3s;
+}
+
 @media (max-width: 768px) {
   .filmsGrid {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .filmCard {
     padding: 1rem;
     background-color: #343434;

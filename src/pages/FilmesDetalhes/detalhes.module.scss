@@ -1,0 +1,55 @@
+.detalhesContainer {
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.moviePoster {
+  height: 60vh;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff;
+  width: 75%;
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.voltarButton {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  background-color: #d32020;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .detalhesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .moviePoster {
+    height: 40vh;
+    margin-bottom: 1rem;
+  }
+
+  .detailsSection {
+    width: 100%;
+    margin: 2rem;
+  }
+}

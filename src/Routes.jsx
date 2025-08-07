@@ -6,6 +6,7 @@ import Series from "./pages/Series/Series";
 import MinhaLista from "./pages/MinhaLista/MinhaLista";
 import Configuracao from "./pages/Configuracao/Configuracao";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import FilmesDetalhes from "./pages/FilmesDetalhes/FilmesDetalhes";
 
 export default function RoutesApp() {
   return (
@@ -13,6 +14,7 @@ export default function RoutesApp() {
       <Route path="/pesquisar" element={<PesquisarFilmesESeries />} />
       <Route path="/" element={<Inicio />} />
       <Route path="/filmes" element={<Filmes />} />
+      <Route path="/filmes/:id" element={<FilmesDetalhes />} />
       <Route path="/series" element={<Series />} />
       <Route path="/minha-lista" element={<MinhaLista />} />
       <Route path="/configuracoes" element={<Configuracao />} />

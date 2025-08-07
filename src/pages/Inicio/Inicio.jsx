@@ -1,13 +1,13 @@
-
 import { useEffect, useState } from "react";
 import { useFilmsContext } from "../../context/FilmsContext";
+import { useNavigate } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
 import s from "./Inicio.module.scss";
 
 export default function Inicio() {
   const { films, loading, error, fetchFilms } = useFilmsContext();
-
   const [selectedFilm, setSelectedFilm] = useState(null);
+  const navigate = useNavigate();
 
   // Carregar filmes e restaurar último selecionado
   useEffect(() => {
@@ -53,7 +53,19 @@ export default function Inicio() {
             className={s.filmCard}
             onClick={() => setSelectedFilm(film)}
           >
-            <img src={film.image} alt={film.title} className={s.filmImage} />
+            <div className={s.imageWrapper}>
+              <img src={film.image} alt={film.title} className={s.filmImage} />
+              <button
+                className={s.detailsButton}
+                type="button"
+                onClick={e => {
+                  e.stopPropagation();
+                  navigate(`/filmes/${film.id}`);
+                }}
+              >
+                Ver detalhes
+              </button>
+            </div>
             <h4 className={s.filmTitle}>{film.title}</h4>
             <p className={s.filmProducer}>{film.producer}</p>
           </div>
