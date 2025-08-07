@@ -10,7 +10,7 @@ export default function Hero({ title, autor, ano, rate, description, image, id }
   };
 
   return (
-    <main className={s.hero}>
+    <main className={s.hero} style={{ backgroundImage: `url(${image})` }}>
       <section className={s.heroContent}>
         <h1>{title}</h1>
         <p>{autor} - {ano}</p>
@@ -30,9 +30,6 @@ export default function Hero({ title, autor, ano, rate, description, image, id }
             ★ {addedToList ? "Remover da lista" : "Adicionar à lista"}
           </button>
         </div>
-      </section>
-      <section className={s.heroImage}>
-        <img src={image} alt={`${title} poster`} />
       </section>
     </main>
   );

@@ -1,11 +1,26 @@
-@use "sass:color";
-
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80vh;
+  height: 85vh;
   width: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.85) 30%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0.3) 80%,
+        rgba(0, 0, 0, 0.1) 100%);
+  }
 }
 
 .heroContent {
@@ -13,8 +28,12 @@
   flex-direction: column;
   width: 45%;
   line-height: 1.5;
-  padding: 0 1rem;
+  padding: 0 3rem 0 1rem;
   color: #fff;
+  position: relative;
+  z-index: 1;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .heroContent h1 {
@@ -28,6 +47,7 @@
 
 .description {
   font-size: 12px;
+  width: 85%;
 }
 
 .star {
@@ -40,7 +60,6 @@
   margin-top: 2rem;
 }
 
-
 .actions :nth-child(1) {
   background: #35d7da;
   font-weight: bold;
@@ -48,7 +67,7 @@
   transition: background-color 0.2s;
 
   &:hover {
-    background: color.scale(#35d7da, $lightness: -5%);
+    background: #2bb7ba;
   }
 }
 
@@ -59,7 +78,7 @@
   transition: background-color 0.2s;
 
   &:hover {
-    background: color.scale(#e74c3c, $lightness: -5%);
+    background: #c0392b;
   }
 }
 
@@ -68,61 +87,58 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55%;
-  height: 100%;
-  box-shadow: -20px 0 40px rgba(0, 0, 0, 0.5), 0 -20px 40px rgba(0, 0, 0, 0.5);
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(to right,
-        rgba(0, 0, 0, 0.97) 0%,
-        rgba(0, 0, 0, 0.432) 30%,
-        rgba(0, 0, 0, 0) 60%);
-    pointer-events: none;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
+  width: 45%;
+  height: 80%;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: 5%;
 }
 
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column-reverse;
-    align-items: center;
-    height: 85vh;
+    flex-direction: column;
+    height: auto;
+
+    &::before {
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.7) 30%,
+          rgba(0, 0, 0, 0.4) 70%,
+          rgba(0, 0, 0, 0.2) 100%);
+    }
   }
 
   .heroContent {
     width: 100%;
     text-align: center;
-
-    h1 {
-      font-size: 2.5rem;
-    }
+    padding: 2rem 1rem;
+    margin-left: 0;
   }
 
   .heroImage {
-    width: 100%;
-    height: 300px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    width: 70%;
+    height: 350px;
+    margin: 0 auto 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 
     &::before {
       background: linear-gradient(to top,
-          rgba(0, 0, 0, 0.97) 0%,
-          rgba(0, 0, 0, 0.432) 30%,
-          rgba(0, 0, 0, 0) 60%);
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.3) 30%,
+          rgba(0, 0, 0, 0) 70%);
     }
   }
 
   .actions {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+  }
+
+  .actions :nth-child(1),
+  .actions :nth-child(2) {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
