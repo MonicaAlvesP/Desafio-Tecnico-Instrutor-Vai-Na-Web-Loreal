@@ -77,12 +77,10 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.97) 0%,
-      rgba(0, 0, 0, 0.432) 30%,
-      rgba(0, 0, 0, 0) 60%
-    );
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 0.97) 0%,
+        rgba(0, 0, 0, 0.432) 30%,
+        rgba(0, 0, 0, 0) 60%);
     pointer-events: none;
   }
 
@@ -98,17 +96,29 @@
   .hero {
     flex-direction: column-reverse;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
   }
 
   .heroContent {
     width: 100%;
     text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 
   .heroImage {
     width: 100%;
     height: 300px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+
+    &::before {
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.97) 0%,
+          rgba(0, 0, 0, 0.432) 30%,
+          rgba(0, 0, 0, 0) 60%);
+    }
   }
 
   .actions {
