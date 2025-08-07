@@ -1,5 +1,5 @@
 import { useFilmsContext } from "../../context/FilmsContext";
-import s from "./Hero.module.scss";
+import s from "./hero.module.scss";
 
 export default function Hero({ title, autor, ano, rate, description, image, id }) {
   const { myList, toggleMyList } = useFilmsContext();
