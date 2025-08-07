@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useFilmsContext } from "../../context/FilmsContext";
 import { useNavigate } from "react-router-dom";
 import Hero from "../../components/Hero/Hero";
-import s from "./Inicio.module.scss";
+import s from "./inicio.module.scss";
 
 export default function Inicio() {
   const { films, loading, error, fetchFilms } = useFilmsContext();
