@@ -5,14 +5,12 @@ import s from "./minhaLista.module.scss";
 export default function MinhaLista() {
   const { films, myList, fetchFilms, loading, error } = useFilmsContext();
 
-  // Carregar filmes quando o componente montar se não estiverem carregados
   useEffect(() => {
     if (films.length === 0) {
       fetchFilms();
     }
   }, [films.length, fetchFilms]);
 
-  // Filtra apenas os filmes que estão na lista de favoritos
   const favoritosFiltrados = films.filter(film => myList.includes(film.id));
 
   return (

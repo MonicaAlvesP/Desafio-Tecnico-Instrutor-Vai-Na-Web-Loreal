@@ -3,24 +3,20 @@ import { getFilms } from "../services/api";
 
 export const FilmsContext = createContext();
 
-
 export function AppProvider({ children }) {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Carregue a lista de favoritos do localStorage ao inicializar
   const [myList, setMyList] = useState(() => {
     const savedList = localStorage.getItem("myList");
     return savedList ? JSON.parse(savedList) : [];
   });
 
-  // Salve a lista de favoritos no localStorage sempre que mudar
   useEffect(() => {
     localStorage.setItem("myList", JSON.stringify(myList));
   }, [myList]);
 
-  // Função para buscar filmes da API
   const fetchFilms = async () => {
     setLoading(true);
     setError(null);
@@ -34,7 +30,6 @@ export function AppProvider({ children }) {
     }
   };
 
-  // Adicionar/remover da lista
   const toggleMyList = (id) => {
     setMyList((prev) =>
       prev.includes(id) ? prev.filter(filmId => filmId !== id) : [...prev, id]
@@ -57,7 +52,6 @@ export function AppProvider({ children }) {
   );
 }
 
-// Hook para usar o contexto facilmente
 export function useFilmsContext() {
   return useContext(FilmsContext);
 }

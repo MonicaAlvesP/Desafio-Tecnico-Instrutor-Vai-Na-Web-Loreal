@@ -3,8 +3,6 @@ import { BsSearch } from 'react-icons/bs';
 import { useFilmsContext } from '../../context/FilmsContext';
 import s from './pesquisar.module.scss';
 
-// Função para validar e sanitizar URLs de imagem
-// Ela verifica se a URL é segura e retorna null se não for
 function getSafeImageUrl(url) {
   try {
     if (!url || typeof url !== 'string') return null;
@@ -33,21 +31,18 @@ export default function PesquisarFilmesESeries() {
   const { films, loading, error, fetchFilms } = useFilmsContext();
   const [termoPesquisa, setTermoPesquisa] = useState('');
 
-  // Garante que os filmes sejam carregados ao acessar a página
   useEffect(() => {
     if (films.length === 0 && !loading) {
       fetchFilms();
     }
   }, [films.length, loading, fetchFilms]);
 
-  // Busca titulos case-insensitive
   const resultados = termoPesquisa.trim()
     ? films.filter(film =>
       film.title.toLowerCase().includes(termoPesquisa.toLowerCase())
     )
     : [];
 
-  // Populares: maiores rates, até 12
   const populares = films
     .slice()
     .sort((a, b) => Number(b.rt_score) - Number(a.rt_score))

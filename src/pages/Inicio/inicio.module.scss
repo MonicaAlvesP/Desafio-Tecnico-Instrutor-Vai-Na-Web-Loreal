@@ -1,84 +1,125 @@
 .title {
-  font-weight: bold;
+  font-size: 1rem;
+  color: #e2e2e2;
+  margin: 1rem 0;
+}
+
+.categoryContainer {
+  position: relative;
   margin-top: 3rem;
-  color: #797878;
 }
 
-.filmsGrid {
+.rowControls {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: space-between;
-  padding: 0 10px;
-  margin-top: 1rem;
+  align-items: center;
 }
 
-.filmCard {
-  cursor: pointer;
-  width: 180px;
-  text-align: center;
-  color: #fff;
-  border-radius: 8px;
-  border: solid 1px #343434;
-  
+.filmsRow {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  scrollbar-width: none;
 
-  &:hover {
-    box-shadow: 0 2px 12px #0008;
-    transform: translateY(-2px) scale(1.03);
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
-.filmImage {
-  width: 100%;
-  border-radius: 8px;
+.scrollButton {
+  position: absolute;
+  z-index: 10;
+  background-color: #D32020;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.leftButton {
+  left: 10px;
+}
+
+.rightButton {
+  right: 10px;
+}
+
+.filmCard {
+  flex: 0 0 auto;
+  width: 180px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+
+  &:hover .detailsButton {
+    opacity: 1;
+  }
+}
+
+.filmImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .detailsButton {
   position: absolute;
-  top: 12px;
-  right: 16px;
-  background: #35d7da;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-weight: bold;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D32020;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
   cursor: pointer;
-  box-shadow: 0 2px 8px #0004;
-  transition: background 0.2s;
-  z-index: 2;
 
   &:hover {
-    background: #1bb3b7;
+    background-color: #A30B0B;
   }
 }
 
 .filmTitle {
-  font-weight: bold;
-  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .filmProducer {
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-top: 2px;
-}
-
-@media (max-width: 768px) {
-  .filmsGrid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .filmCard {
-    padding: 1rem;
-    background-color: #343434;
-    width: 90%;
-    margin: 20px 0;
-  }
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

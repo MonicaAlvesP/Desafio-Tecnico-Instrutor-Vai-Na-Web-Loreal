@@ -13,10 +13,8 @@ import { IoStarSharp } from 'react-icons/io5';
 import Sidebar from '../ResponsiveSidebar/Sidebar';
 
 export default function Header() {
-  // Estado para controlar se o menu está aberto ou fechado iniciando como fechado
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Função para alternar o estado do menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -24,23 +22,18 @@ export default function Header() {
   return (
     <>
       <header className={s.header}>
-        {/* Botão de menu hambúrguer para mobile */}
         <button
           className={s.hamburgerMenu}
           onClick={toggleMenu}
           aria-label="Abrir menu de navegação"
         >
-          {/* logica com icones para menu aberto e menu fechado */}
           {isMenuOpen ? <HiX /> : <HiMenu />}
         </button>
-
-        {/* cabeçalho do site */}
         <button className={s.userMenu} aria-label="Menu do usuário">
           <img src={userPhoto} className={s.userPhoto} alt="Foto de perfil do usuário" />
           <BiSolidDownArrow aria-hidden="true" />
         </button>
         <nav>
-          {/* links de navegação */}
           <ul className={s.navLinks}>
             <li>
               <Link
@@ -90,8 +83,7 @@ export default function Header() {
         </nav>
         <img src={logo} className={s.logo} alt="Streamflix logo" />
       </header>
-
-      {/* compoenente de menu lateral com os links e info de usuario */}
+      
       <Sidebar isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </>
   );
