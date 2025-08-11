@@ -15,7 +15,7 @@ export default function MinhaLista() {
 
   return (
     <div className={s.container}>
-      <h3 className={s.title}>Minha Lista</h3>
+      <h1 className={s.title}>Minha Lista</h1>
 
       {loading && <p className={s.loading}>Carregando filmes...</p>}
       {error && <p className={s.error}>Erro ao carregar filmes.</p>}

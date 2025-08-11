@@ -15,7 +15,7 @@ export default function Sidebar({ isOpen, toggleMenu }) {
       {isOpen && (
         <button className={s.overlay} onClick={toggleMenu}></button>
       )}
-      <aside className={`${s.sidebar} ${isOpen ? s.open : ''}`} role="navigation" aria-label="Menu de navegação principal">
+      <aside className={`${s.sidebar} ${isOpen ? s.open : ''}`} aria-label="Menu de navegação principal">
         <header className={s.userSection}>
           <button className={s.userMenu} aria-label="Menu do usuário">
             <img src={userPhoto} className={s.userPhoto} alt="Foto de perfil do usuário" />
@@ -23,9 +23,9 @@ export default function Sidebar({ isOpen, toggleMenu }) {
             <BiSolidDownArrow className={s.arrow} />
           </button>
         </header>
-        <nav className={s.navigation} role="navigation" aria-label="Links de navegação">
-          <ul className={s.navList} role="list">
-            <li role="listitem">
+        <nav className={s.navigation} aria-label="Links de navegação">
+          <ul className={s.navList}>
+            <li>
               <Link
                 to="/pesquisar"
                 className={s.navItem}
@@ -36,31 +36,31 @@ export default function Sidebar({ isOpen, toggleMenu }) {
                 <span className={s.text}>Pesquisar</span>
               </Link>
             </li>
-            <li role="listitem">
+            <li>
               <Link to="/" className={s.navItem} onClick={toggleMenu}>
                 <MdHomeFilled className={s.icon} aria-hidden="true" />
                 <span className={s.text}>Início</span>
               </Link>
             </li>
-            <li role="listitem">
+            <li>
               <Link to="/filmes" className={s.navItem} onClick={toggleMenu}>
                 <PiFilmReelFill className={s.icon} aria-hidden="true" />
                 <span className={s.text}>Filmes</span>
               </Link>
             </li>
-            <li role="listitem">
+            <li>
               <Link to="/series" className={s.navItem} onClick={toggleMenu}>
                 <RiTvFill className={s.icon} aria-hidden="true" />
                 <span className={s.text}>Séries</span>
               </Link>
             </li>
-            <li role="listitem">
+            <li>
               <Link to="/minha-lista" className={s.navItem} onClick={toggleMenu}>
                 <IoStarSharp className={s.icon} aria-hidden="true" />
                 <span className={s.text}>Minha Lista</span>
               </Link>
             </li>
-            <li role="listitem">
+            <li>
               <Link to="/configuracoes" className={s.navItem} onClick={toggleMenu}>
                 <MdSettings className={s.icon} aria-hidden="true" />
                 <span className={s.text}>Configurações</span>

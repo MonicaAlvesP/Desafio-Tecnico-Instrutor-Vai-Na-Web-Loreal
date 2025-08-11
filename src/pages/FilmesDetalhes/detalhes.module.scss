@@ -19,6 +19,7 @@
   height: 60vh;
 }
 
+
 .detailsSection {
   display: flex;
   flex-direction: column;
@@ -29,6 +30,24 @@
 
   h1 {
     font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.25rem 0;
+    color: #fff;
+  }
+
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0.5rem 0 0.25rem 0;
+    color: #f2f2f2;
   }
 
   p {

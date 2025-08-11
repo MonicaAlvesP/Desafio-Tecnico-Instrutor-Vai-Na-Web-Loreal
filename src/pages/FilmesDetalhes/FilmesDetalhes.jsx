@@ -8,7 +8,6 @@ export default function FilmesDetalhes() {
   const { films, fetchFilms, loading, error } = useFilmsContext();
   const navigate = useNavigate();
 
-  // Garante que os filmes sejam carregados ao acessar a página
   useEffect(() => {
     if (films.length === 0 && !loading) {
       fetchFilms();
@@ -46,7 +45,7 @@ export default function FilmesDetalhes() {
       <section className={s.detailsSection}>
         <button onClick={() => navigate(-1)} className={s.voltarButton}>Voltar</button>
         <h1>{film.title}</h1>
-        <h3><strong>Diretor:</strong> {film.director}</h3>
+        <h2><strong>Diretor:</strong> {film.director}</h2>
         <span><strong>Produtor:</strong> {film.producer}</span>
         <span><strong>Ano:</strong> {film.release_date}</span>
         <span><strong>Duração:</strong> {film.running_time} min</span>

@@ -5,9 +5,14 @@
   width: 100%;
 }
 
-.title {
+
+.title,
+h1 {
   margin-bottom: 1rem;
   color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .loading {
@@ -22,8 +27,9 @@
   text-align: center;
 }
 
+
 .empty {
-  color: #bbb;
+  color: #f2f2f2;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -48,14 +54,19 @@
   border-radius: 4px;
 }
 
-.filmTitle {
+
+.filmTitle,
+h2,
+h3 {
   margin: 0.5rem 0 0.25rem 0;
-  color: #fff;
+  color: #f2f2f2;
   font-size: 1.1rem;
+  font-weight: 600;
 }
 
+
 .filmInfo {
-  color: #bbb;
+  color: #e0e0e0;
   font-size: 0.9rem;
 }
 

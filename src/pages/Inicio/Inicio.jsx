@@ -56,6 +56,7 @@ export default function Inicio() {
 
   return (
     <main>
+
       <Hero
         id={selectedFilm?.id}
         title={selectedFilm?.title}
@@ -72,7 +73,7 @@ export default function Inicio() {
       {categories.map((category, index) => (
         <section key={index} className={s.categoryContainer}>
           <header className={s.title}>
-            <h3>{category.title}</h3>
+            <h2>{category.title}</h2>
           </header>
           <nav className={s.rowControls} aria-label={`Navegação de ${category.title}`}>
             <button
